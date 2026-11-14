@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090b10" />
+  <meta name="description" content="Portfolio of L.S.V. Saravanan Ganesh — ECE student, web developer and technology enthusiast building useful digital and electronics projects." />
+  <title>L.S.V. Saravanan Ganesh — Engineer in the Making</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#090b10;--panel:#11151e;--panel2:#151b26;--text:#f2f5fa;--muted:#a0aaba;--line:#252d3b;--lime:#c6f36b;--cyan:#76d8e8;--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}.mono{font-family:"DM Mono",monospace}.muted{color:var(--muted)}.eyebrow{font:500 12px "DM Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}.section{padding:100px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:36px}.section-head h2{font-size:clamp(30px,5vw,48px);letter-spacing:-.05em;line-height:1.1;margin:10px 0 0}.section-head p{max-width:430px;margin:0;color:var(--muted);font-size:14px}
+    header{height:76px;position:sticky;top:0;z-index:20;background:#090b10eF;border-bottom:1px solid #ffffff12;backdrop-filter:blur(16px)}.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:-.04em}.brand span{color:var(--lime)}.nav-links{display:flex;gap:26px;align-items:center}.nav-links a{font-size:12px;color:#c1c9d5;transition:.2s}.nav-links a:hover{color:var(--lime)}.nav-cta{border:1px solid #52623d;border-radius:999px;padding:9px 16px;color:var(--lime)!important}.menu{display:none;background:none;color:white;border:0;font-size:24px}
+    .hero{min-height:calc(100vh - 76px);display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:50px;padding:75px 0 90px;position:relative}.hero:before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:#b5ed5710;filter:blur(90px);right:4%;top:14%;pointer-events:none}.hero-copy,.hero-card{position:relative}.hero h1{font-size:clamp(48px,7.3vw,88px);line-height:.99;letter-spacing:-.075em;margin:20px 0 24px;max-width:760px}.hero h1 span{color:var(--lime)}.hero-desc{max-width:610px;color:#aeb8c8;font-size:17px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0}.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 19px;border-radius:8px;font-size:13px;font-weight:800;border:1px solid var(--line);transition:transform .2s,border-color .2s}.btn:hover{transform:translateY(-3px);border-color:var(--lime)}.btn.primary{background:var(--lime);color:#11170b;border-color:var(--lime)}.hero-meta{display:flex;gap:24px;flex-wrap:wrap;font:11px "DM Mono",monospace;color:#8e9aab}.hero-meta span:before{content:"";display:inline-block;width:6px;height:6px;background:var(--lime);border-radius:50%;margin:0 9px 1px 0}.hero-card{border:1px solid #2b3544;background:linear-gradient(145deg,#171e2a,#0e121a);border-radius:18px;padding:26px;box-shadow:0 30px 90px #0008;transform:rotate(1.5deg)}.card-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px;font:11px "DM Mono",monospace;color:#8d9aab}.status{color:var(--lime)}.terminal{padding:28px 0 18px;font:12px/2 "DM Mono",monospace;color:#aab5c4}.terminal b{color:var(--lime);font-weight:400}.terminal .cyan{color:var(--cyan)}.orbit{height:150px;display:grid;place-items:center;position:relative}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #56634a66;border-radius:50%;width:140px;height:80px;transform:rotate(-28deg)}.orbit:after{transform:rotate(38deg);border-color:#76d8e866}.orbit-core{height:54px;width:54px;border-radius:15px;background:var(--lime);color:#12180d;display:grid;place-items:center;font-size:24px;font-weight:800;box-shadow:0 0 45px #c6f36b55}.chip-row{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid #2c3543;border-radius:5px;padding:5px 9px;color:#b5c0ce;font:10px "DM Mono",monospace}
+    .ticker{border-block:1px solid var(--line);overflow:hidden;padding:17px 0;color:#8793a4;font:11px "DM Mono",monospace;letter-spacing:.08em}.ticker-inner{display:flex;justify-content:space-around;gap:28px;white-space:nowrap}.ticker span:before{content:"✳";color:var(--lime);margin-right:12px}
+    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.about-aside{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:24px;height:max-content}.initials{font-size:66px;font-weight:800;letter-spacing:-.08em;color:var(--lime);line-height:1}.about-aside h3{margin:16px 0 5px}.about-aside p{font-size:13px;color:var(--muted)}.about-copy h3{font-size:clamp(22px,3vw,30px);line-height:1.35;letter-spacing:-.04em;margin:0 0 20px}.about-copy p{color:var(--muted);font-size:15px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.stat{border-top:1px solid var(--line);padding-top:15px}.stat strong{display:block;font-size:23px;color:var(--lime)}.stat span{font:10px "DM Mono",monospace;color:#8793a4;text-transform:uppercase}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.skill{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:23px;min-height:190px}.skill-icon{font-size:23px}.skill h3{font-size:16px;margin:15px 0 8px}.skill p{font-size:12px;color:var(--muted);margin:0 0 16px}.skill .tags{display:flex;gap:7px;flex-wrap:wrap}.skill .tags span{font:10px "DM Mono",monospace;color:#c1ccda;background:#1c2430;padding:5px 7px;border-radius:4px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.project{border:1px solid var(--line);border-radius:14px;background:var(--panel);overflow:hidden;transition:.25s}.project:hover{transform:translateY(-5px);border-color:#65794b}.project-art{height:190px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 50%,#c6f36b25,transparent 45%),linear-gradient(135deg,#192332,#0e1219)}.project:nth-child(2) .project-art{background:radial-gradient(circle at 50% 50%,#76d8e825,transparent 45%),linear-gradient(135deg,#142633,#0e1219)}.project:nth-child(3) .project-art{background:radial-gradient(circle at 50% 50%,#bb91f225,transparent 45%),linear-gradient(135deg,#241c33,#0e1219)}.project:nth-child(4) .project-art{background:radial-gradient(circle at 50% 50%,#e8b87625,transparent 45%),linear-gradient(135deg,#30251b,#0e1219)}.project-symbol{font-size:60px;filter:drop-shadow(0 10px 25px #0008)}.project-number{position:absolute;top:16px;left:18px;font:11px "DM Mono",monospace;color:#aeb9c8}.project-type{position:absolute;bottom:14px;right:17px;font:10px "DM Mono",monospace;color:var(--lime);letter-spacing:.1em}.project-body{padding:23px}.project-body h3{font-size:21px;letter-spacing:-.04em;margin:0 0 8px}.project-body p{color:var(--muted);font-size:13px;margin:0 0 18px}.project-foot{display:flex;align-items:center;justify-content:space-between;gap:10px}.project-tags{font:10px "DM Mono",monospace;color:#9ba8b8}.project-link{font-size:12px;color:var(--lime);font-weight:800}
+    .timeline{border-left:1px solid #3b4655;margin-left:8px;padding-left:28px;display:grid;gap:28px}.timeline-item{position:relative}.timeline-item:before{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--lime);left:-33px;top:8px;box-shadow:0 0 0 5px #c6f36b18}.timeline-item small{font:10px "DM Mono",monospace;color:var(--lime);text-transform:uppercase;letter-spacing:.1em}.timeline-item h3{margin:5px 0;font-size:18px}.timeline-item p{margin:0;color:var(--muted);font-size:13px;max-width:720px}
+    .contact-panel{border:1px solid #394633;background:radial-gradient(circle at 85% 15%,#c6f36b17,transparent 30%),#111710;border-radius:18px;padding:clamp(28px,6vw,60px);display:flex;justify-content:space-between;align-items:center;gap:35px}.contact-panel h2{font-size:clamp(32px,5vw,54px);line-height:1.05;letter-spacing:-.06em;margin:12px 0}.contact-panel p{color:#aab5a1;max-width:520px;font-size:14px}.contact-links{display:flex;flex-direction:column;gap:10px;min-width:190px}.contact-links a{border:1px solid #46513d;padding:11px 14px;border-radius:7px;font-size:12px;color:#dce8d0}.contact-links a:hover{border-color:var(--lime);color:var(--lime)}
+    footer{padding:28px 0;border-top:1px solid var(--line);color:#788495;font:10px "DM Mono",monospace}.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.backtop{color:var(--lime)}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;gap:35px;padding-top:70px}.hero-card{max-width:520px;transform:none}.about-grid{grid-template-columns:1fr;gap:30px}.skills-grid{grid-template-columns:repeat(2,1fr)}.contact-panel{align-items:flex-start;flex-direction:column}.contact-links{flex-direction:row;flex-wrap:wrap}.nav-links{gap:15px}}
+    @media(max-width:600px){.wrap{width:min(100% - 32px,var(--max))}.section{padding:72px 0}.section-head{display:block}.section-head p{margin-top:15px}.nav{position:relative}.menu{display:block}.nav-links{display:none;position:absolute;top:75px;left:-16px;right:-16px;background:#0d1119;border-bottom:1px solid var(--line);padding:20px 24px;flex-direction:column;align-items:flex-start}.nav-links.open{display:flex}.hero{min-height:auto;padding:72px 0}.hero h1{font-size:clamp(46px,14vw,68px)}.hero-desc{font-size:15px}.hero-meta{gap:12px}.skills-grid,.projects{grid-template-columns:1fr}.project-art{height:160px}.stats{gap:8px}.stat strong{font-size:19px}.ticker-inner{justify-content:flex-start}.about-aside{padding:20px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav wrap" aria-label="Main navigation">
+    <a class="brand" href="#home">LSV<span>.</span></a>
+    <button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a class="nav-cta" href="#contact">Let's connect ↗</a>
+    </div>
+  </nav>
+</header>
+<main>
+  <section class="hero wrap" id="home">
+    <div class="hero-copy">
+      <div class="eyebrow">ECE student · Developer · Builder</div>
+      <h1>Curious mind.<br><span>Practical</span> ideas.</h1>
+      <p class="hero-desc">I'm <strong>L.S.V. Saravanan Ganesh</strong> — an Electronics & Communication Engineering student who enjoys turning ideas into useful digital experiences and real-world technology projects.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">Explore my work ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/lsvsaravananganesh/" target="_blank" rel="noreferrer">Connect on LinkedIn ↗</a>
+      </div>
+      <div class="hero-meta"><span>Based in India</span><span>Open to learning & collaboration</span></div>
+    </div>
+    <aside class="hero-card" aria-label="Developer profile card">
+      <div class="card-top"><span>PROFILE / 001</span><span class="status">● AVAILABLE TO CONNECT</span></div>
+      <div class="terminal"><div><b>const</b> creator = {</div><div>&nbsp; name: <span class="cyan">'Saravanan Ganesh'</span>,</div><div>&nbsp; focus: <span class="cyan">'Build useful things'</span>,</div><div>&nbsp; domains: [<span class="cyan">'Web'</span>, <span class="cyan">'ECE'</span>, <span class="cyan">'IoT'</span>],</div><div>&nbsp; mindset: <span class="cyan">'Learn · Build · Improve'</span></div><div>};</div></div>
+      <div class="orbit"><div class="orbit-core">S</div></div>
+      <div class="chip-row"><span class="chip">WEB DEVELOPMENT</span><span class="chip">ELECTRONICS</span><span class="chip">INNOVATION</span></div>
+    </aside>
+  </section>
+  <div class="ticker"><div class="ticker-inner wrap"><span>BUILD WITH PURPOSE</span><span>LEARN BY DOING</span><span>ENGINEERING + CREATIVITY</span><span>MAKE IDEAS REAL</span></div></div>
+  <section class="section wrap" id="about">
+    <div class="section-head"><div><div class="eyebrow">01 / About</div><h2>A little about me.</h2></div><p>Engineering is where curiosity meets experimentation. I like learning by making things that solve practical problems.</p></div>
+    <div class="about-grid">
+      <aside class="about-aside"><div class="initials">LSV.</div><h3>L.S.V. Saravanan Ganesh</h3><p>B.Tech · Electronics & Communication Engineering</p><div class="chip-row"><span class="chip">STUDENT</span><span class="chip">DEVELOPER</span><span class="chip">INNOVATOR</span></div></aside>
+      <div class="about-copy"><h3>I work at the intersection of electronics, software, and problem-solving.</h3><p>I'm currently pursuing my B.Tech in Electronics and Communication Engineering at G. Pulla Reddy Engineering College. Alongside my core engineering subjects, I explore web development, AI-powered ideas, embedded systems, and IoT.</p><p>From building platforms to experimenting with circuits and simulation tools, I enjoy the process of understanding a problem, trying an approach, and improving it through feedback. I'm especially interested in projects with a meaningful real-world impact.</p><div class="stats"><div class="stat"><strong>ECE</strong><span>Engineering base</span></div><div class="stat"><strong>Build</strong><span>Learning approach</span></div><div class="stat"><strong>Curious</strong><span>Always exploring</span></div></div></div>
+    </div>
+  </section>
+  <section class="section wrap" id="skills">
+    <div class="section-head"><div><div class="eyebrow">02 / Toolkit</div><h2>Things I work with.</h2></div><p>A growing toolkit across software, electronics, and product thinking. Always learning and expanding it.</p></div>
+    <div class="skills-grid">
+      <article class="skill"><div class="skill-icon">⌘</div><h3>Web Development</h3><p>Building responsive, user-friendly web experiences.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React basics</span></div></article>
+      <article class="skill"><div class="skill-icon">⌁</div><h3>Programming</h3><p>Developing logical foundations and practical coding skills.</p><div class="tags"><span>Java</span><span>Python</span><span>SQL</span></div></article>
+      <article class="skill"><div class="skill-icon">⌬</div><h3>Electronics & ECE</h3><p>Exploring circuits, microprocessors, and digital systems.</p><div class="tags"><span>8086</span><span>8051</span><span>Digital Electronics</span></div></article>
+      <article class="skill"><div class="skill-icon">◉</div><h3>Embedded & IoT</h3><p>Connecting sensors, controllers, and practical applications.</p><div class="tags"><span>Arduino</span><span>ESP32</span><span>Wokwi</span><span>Tinkercad</span></div></article>
+      <article class="skill"><div class="skill-icon">✳</div><h3>Tools & Workflow</h3><p>Prototyping, version control, and collaborative building.</p><div class="tags"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Figma</span></div></article>
+      <article class="skill"><div class="skill-icon">◎</div><h3>AI & Product Ideas</h3><p>Exploring AI-assisted solutions and user-focused products.</p><div class="tags"><span>Gemini API</span><span>Prompting</span><span>Prototyping</span></div></article>
+    </div>
+  </section>
+  <section class="section wrap" id="projects">
+    <div class="section-head"><div><div class="eyebrow">03 / Selected work</div><h2>Ideas into projects.</h2></div><p>A selection of projects and experiments across AI, education, web experiences, and accessible technology.</p></div>
+    <div class="projects">
+      <article class="project"><div class="project-art"><span class="project-number">PROJECT / 01</span><div class="project-symbol">⌖</div><span class="project-type">AI · TOURISM</span></div><div class="project-body"><h3>UnseenGo AI</h3><p>An AI-powered hidden-gem tourism explorer focused on helping travellers discover lesser-known destinations and build meaningful journeys.</p><div class="project-foot"><span class="project-tags">AI · WEB · SUSTAINABLE TOURISM</span><a class="project-link" href="https://lsvsaravananganesh-bit.github.io/Unseen-Go-AI/index.html" target="_blank" rel="noreferrer">View project ↗</a></div></div></article>
+      <article class="project"><div class="project-art"><span class="project-number">PROJECT / 02</span><div class="project-symbol">▤</div><span class="project-type">EDTECH · WEB</span></div><div class="project-body"><h3>SmartBro</h3><p>An academic performance and early-warning system concept designed to help identify students who may need timely academic support.</p><div class="project-foot"><span class="project-tags">EDTECH · DASHBOARD · ANALYTICS</span><a class="project-link" href="https://smartbro-portal.onrender.com/" target="_blank" rel="noreferrer">View project ↗</a></div></div></article>
+      <article class="project"><div class="project-art"><span class="project-number">PROJECT / 03</span><div class="project-symbol">✚</div><span class="project-type">AI · HEALTHCARE</span></div><div class="project-body"><h3>Asha — Voice Healthcare Assistant</h3><p>A vernacular voice-first healthcare assistance concept designed around accessible tele-triage for rural communities.</p><div class="project-foot"><span class="project-tags">VOICE AI · ACCESSIBILITY · HEALTH</span><span class="project-tags">CONCEPT / PROTOTYPE</span></div></div></article>
+      <article class="project"><div class="project-art"><span class="project-number">PROJECT / 04</span><div class="project-symbol">⌁</div><span class="project-type">ECE · IOT</span></div><div class="project-body"><h3>Electronics & IoT Experiments</h3><p>Hands-on learning through microcontroller programming, circuit design, sensor experiments, and virtual prototyping.</p><div class="project-foot"><span class="project-tags">ESP32 · ARDUINO · WOKWI</span><a class="project-link" href="https://github.com/lsvsaravananganesh-bit" target="_blank" rel="noreferrer">Explore GitHub ↗</a></div></div></article>
+    </div>
+  </section>
+  <section class="section wrap" id="journey">
+    <div class="section-head"><div><div class="eyebrow">04 / Journey</div><h2>Learning in progress.</h2></div><p>My journey is shaped by engineering fundamentals, project building, and sharing what I learn.</p></div>
+    <div class="timeline">
+      <div class="timeline-item"><small>Education · Current</small><h3>B.Tech — Electronics & Communication Engineering</h3><p>G. Pulla Reddy Engineering College. Building a foundation in electronics, communication systems, digital design, and engineering practice.</p></div>
+      <div class="timeline-item"><small>Student leadership</small><h3>PALS — IIT Initiative</h3><p>Participating as a student leader and engaging with technical learning and student development opportunities.</p></div>
+      <div class="timeline-item"><small>Recognition · Project building</small><h3>Samarth Foundation — Project Recognition</h3><p>Recognised for the UnseenGo AI project at a competition hosted at SV Vedic University, Tirupati.</p></div>
+      <div class="timeline-item"><small>Hackathon · EdTech</small><h3>ANVESH ’26 — Second Prize</h3><p>Worked on SmartBro in the EdTech track at the IEEE Computer Society GPREC Web Development Hackathon.</p></div>
+      <div class="timeline-item"><small>Community · Technical outreach</small><h3>Web Development & Online Tools Session</h3><p>Shared practical introductions to web development, Tinkercad, and Wokwi with diploma students at a government polytechnic college.</p></div>
+    </div>
+  </section>
+  <section class="section wrap" id="contact">
+    <div class="contact-panel"><div><div class="eyebrow">05 / Contact</div><h2>Have an idea?<br>Let's build it.</h2><p>I'm interested in connecting with fellow builders, mentors, and teams working on meaningful technology. Find me through the links here.</p></div><div class="contact-links"><a href="https://www.linkedin.com/in/lsvsaravananganesh/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/lsvsaravananganesh-bit" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://github.com/lsvsaravananganesh-bit/My-Portfolio" target="_blank" rel="noreferrer">Portfolio source ↗</a></div></div>
+  </section>
+</main>
+<footer><div class="footer-inner wrap"><span>© <span id="year"></span> L.S.V. SARAVANAN GANESH</span><span>DESIGNED WITH CURIOSITY & BUILT WITH PURPOSE</span><a class="backtop" href="#home">BACK TO TOP ↑</a></div></footer>
+<script>
+  const menuBtn=document.getElementById('menuBtn');
+  const navLinks=document.getElementById('navLinks');
+  menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰';});
+  navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
