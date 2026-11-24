@@ -1,3 +1,5 @@
+document.body.classList.add("js-ready");
+
 const root = document.documentElement;
 const themeButton = document.getElementById("theme-toggle");
 const menuButton = document.getElementById("menu-toggle");
