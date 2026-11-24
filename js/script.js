@@ -1,28 +1,22 @@
-document.body.classList.add("js-ready");
-
 const root = document.documentElement;
 const themeButton = document.getElementById("theme-toggle");
 const menuButton = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 
-function setTheme(theme) {
+function applyTheme(theme) {
   root.dataset.theme = theme;
-  const light = theme === "light";
-  themeButton.setAttribute("aria-label", light ? "Switch to dark theme" : "Switch to light theme");
-  themeButton.setAttribute("title", light ? "Switch to dark theme" : "Switch to light theme");
-  themeButton.querySelector(".theme-icon").textContent = light ? "☾" : "☼";
-  const themeColor = document.querySelector('meta[name="theme-color"]');
-  if (themeColor) themeColor.setAttribute("content", light ? "#f5f6f1" : "#0b0e12");
+  const isDark = theme === "dark";
+  themeButton.textContent = isDark ? "☼" : "◐";
+  themeButton.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute("content", isDark ? "#191a18" : "#f3f0e8");
 }
-
-const savedTheme = localStorage.getItem("portfolio-theme");
-if (savedTheme === "light" || savedTheme === "dark") setTheme(savedTheme);
-else setTheme("dark");
-
+const storedTheme = localStorage.getItem("portfolio-theme");
+applyTheme(storedTheme === "dark" ? "dark" : "light");
 themeButton.addEventListener("click", () => {
-  const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-  setTheme(nextTheme);
-  localStorage.setItem("portfolio-theme", nextTheme);
+  const next = root.dataset.theme === "dark" ? "light" : "dark";
+  applyTheme(next);
+  localStorage.setItem("portfolio-theme", next);
 });
 
 function closeMenu() {
@@ -31,43 +25,30 @@ function closeMenu() {
   menuButton.setAttribute("aria-label", "Open navigation");
 }
 menuButton.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded", String(isOpen));
-  menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+  const open = navLinks.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(open));
+  menuButton.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
 });
-navLinks.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeMenu();
-});
+navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+document.addEventListener("keydown", event => { if (event.key === "Escape") closeMenu(); });
 
 const year = document.getElementById("current-year");
 if (year) year.textContent = new Date().getFullYear();
 
-const revealItems = document.querySelectorAll(".reveal");
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
+const revealTargets = document.querySelectorAll(".section-label,.profile-grid,.project,.capabilities article,.education-item,.milestone,.contact-section h2,.contact-intro,.contact-links");
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const observer = new IntersectionObserver((entries, instance) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
+        instance.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12 });
-  revealItems.forEach((item) => revealObserver.observe(item));
+  revealTargets.forEach(element => {
+    element.classList.add("reveal");
+    observer.observe(element);
+  });
 } else {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
-}
-
-const sections = document.querySelectorAll("main section[id]");
-if ("IntersectionObserver" in window) {
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const activeId = entry.target.id;
-      navLinks.querySelectorAll("a[href^='#']").forEach((link) => {
-        link.classList.toggle("active", link.getAttribute("href") === "#" + activeId);
-      });
-    });
-  }, { rootMargin: "-35% 0px -55% 0px" });
-  sections.forEach((section) => sectionObserver.observe(section));
+  revealTargets.forEach(element => element.classList.add("is-visible"));
 }
