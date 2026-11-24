@@ -59,13 +59,15 @@ if ("IntersectionObserver" in window) {
 }
 
 const sections = document.querySelectorAll("main section[id]");
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    const activeId = entry.target.id;
-    navLinks.querySelectorAll("a[href^='#']").forEach((link) => {
-      link.classList.toggle("active", link.getAttribute("href") === "#" + activeId);
+if ("IntersectionObserver" in window) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const activeId = entry.target.id;
+      navLinks.querySelectorAll("a[href^='#']").forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === "#" + activeId);
+      });
     });
-  });
-}, { rootMargin: "-35% 0px -55% 0px" });
-sections.forEach((section) => sectionObserver.observe(section));
+  }, { rootMargin: "-35% 0px -55% 0px" });
+  sections.forEach((section) => sectionObserver.observe(section));
+}
